@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nicolás Carrizo — Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <button class="tb-btn" onclick="toggleLang()" id="lang-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    EN
+  </button>
+  <button class="tb-btn" onclick="toggleTheme()" id="theme-btn">
+    <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+    <span id="theme-label" data-es="Modo día" data-en="Day mode">Modo día</span>
+  </button>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="lbBgClick(event)">
+  <button class="lb-close" onclick="closeLb()">&#x2715;</button>
+  <button class="lb-prev" onclick="lbSlide(-1)">&#8249;</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-next" onclick="lbSlide(1)">&#8250;</button>
+  <div class="lb-counter" id="lb-counter"></div>
+</div>
+
+<div class="wrap">
+
+<!-- HEADER -->
+<header>
+  <div class="header-top">
+    <div class="name-block">
+      <div class="tag" data-es="Data Analyst · BI · Salesforce" data-en="Data Analyst · BI · Salesforce">Data Analyst · BI · Salesforce</div>
+      <h1>Nicolás<br><span>Carrizo</span></h1>
+      <p class="subtitle" data-es="Analista de Datos — CABA, Argentina" data-en="Data Analyst — Buenos Aires, Argentina">Analista de Datos — CABA, Argentina</p>
+    </div>
+    <div class="header-actions">
+      <button class="btn" onclick="downloadCV()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span data-es="Descargar CV" data-en="Download CV">Descargar CV</span>
+      </button>
+    </div>
+  </div>
+  <div class="contact-row">
+    <a class="contact-item" id="email-link" href="#" title="Enviar email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <span id="em-label">Contactame</span>
+    </a>
+    <a class="wa-btn" 
+    href="https://wa.me/541167481870?text=Hola%20Nicolás,%20vi%20tu%20portfolio%20y%20me%20interesó%20tu%20perfil"
+    target="_blank" 
+    rel="noopener" title="Contactar por WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <a class="contact-item" href="https://www.linkedin.com/in/nicolascarrizo938/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      LinkedIn
+    </a>
+    <a class="contact-item" href="https://github.com/nico-carri" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+      GitHub
+    </a>
+  </div>
+</header>
+
+<!-- PERFIL -->
+<section>
+  <div class="section-label" data-es="Perfil" data-en="Profile">Perfil</div>
+  <p class="perfil-text">
+    <span data-es='Estudiante de <strong>Ciencia de Datos e Inteligencia Artificial</strong> orientado al análisis de datos y BI. Experiencia en proyectos con <strong>SQL, Python y Tableau</strong>, incluyendo dashboards, modelos predictivos y soluciones integradas con cloud. Actualmente en formación: especialización en administración de bases de datos y redes. Busco desarrollarme como <strong>Data Analyst, BI Analyst o Salesforce Trainee</strong>.'
+          data-en='Data Science and Artificial Intelligence student focused on data analysis and BI. Experienced in projects using <strong>SQL, Python and Tableau</strong>, including dashboards, predictive models, and cloud-integrated solutions. Currently pursuing: database administration specialization and networking. Looking to grow as a <strong>Data Analyst, BI Analyst or Salesforce Trainee</strong>.'>
+      Estudiante de <strong>Ciencia de Datos e Inteligencia Artificial</strong> orientado al análisis de datos y BI. Experiencia en proyectos con <strong>SQL, Python y Tableau</strong>, incluyendo dashboards, modelos predictivos y soluciones integradas con cloud. Actualmente en formación: especialización en administración de bases de datos y redes. Busco desarrollarme como <strong>Data Analyst, BI Analyst o Salesforce Trainee</strong>.
+    </span>
+  </p>
+</section>
+
+<!-- SKILLS -->
+<section>
+  <div class="section-label" data-es="Skills" data-en="Skills">Skills</div>
+  <div class="skills-grid">
+    <div class="skill-row"><div class="skill-cat">Data &amp; BI</div><div class="skill-tags"><span class="stag">SQL</span><span class="stag">Python</span><span class="stag">Pandas</span><span class="stag">Scikit-learn</span></div></div>
+    <div class="skill-row"><div class="skill-cat" data-es="Visualización" data-en="Visualization">Visualización</div><div class="skill-tags"><span class="stag">Tableau</span><span class="stag">Looker Studio</span><span class="stag">Plotly</span></div></div>
+    <div class="skill-row"><div class="skill-cat">Development</div><div class="skill-tags"><span class="stag">Java</span><span class="stag">Spring Boot</span><span class="stag">HTML</span><span class="stag">CSS</span><span class="stag">JavaScript</span></div></div>
+    <div class="skill-row"><div class="skill-cat">Tools &amp; Cloud</div><div class="skill-tags"><span class="stag">Git</span><span class="stag">Docker</span><span class="stag">Oracle Cloud</span></div></div>
+    <div class="skill-row" style="grid-column:1/-1"><div class="skill-cat">Salesforce</div><div class="skill-tags"><span class="stag">Service Cloud</span><span class="stag">Reports</span><span class="stag">Dashboards</span><span class="stag" data-es="Gestión de Casos" data-en="Case Management">Gestión de Casos</span><span class="stag">Salesforce API</span></div></div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section>
+  <div class="section-label" data-es="Proyectos" data-en="Projects">Proyectos</div>
+  <div class="projects">
+
+    <div class="project-card">
+      <div class="carousel" id="c0" data-imgs='["telecom1","telecom2","telecom3"]'>
+        <div class="carousel-track" id="ct0">
+          <img src= "assets/imgs/project-telecom-churn/TelecomX_img1.jpg">
+          <img src= "assets/imgs/project-telecom-churn/TelecomX_img2.jpg">
+          <img src= "assets/imgs/project-telecom-churn/TelecomX_img3.jpg">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="slide('c0',-1)">&#8249;</button>
+        <button class="carousel-btn carousel-next" onclick="slide('c0',1)">&#8250;</button>
+        <div class="carousel-dots" id="cd0"><div class="cdot active" onclick="goTo('c0',0)"></div><div class="cdot" onclick="goTo('c0',1)"></div><div class="cdot" onclick="goTo('c0',2)"></div></div>
+        <div class="zoom-hint" data-es="clic para ampliar" data-en="click to enlarge">clic para ampliar</div>
+      </div>
+      <div class="project-body">
+        <div class="project-title">Customer Churn Analysis (Telecom)</div>
+        <div class="project-links">
+          <a class="project-link" href="https://github.com/nico-carri/telecom-churn-analysis" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>GitHub</a>
+          <a class="project-link" href="https://telecom-churn-analysis-pndc.streamlit.app/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Demo</a>
+        </div>
+        <ul class="project-items">
+          <li data-es="Análisis exploratorio y predictivo con Python, SQL y Scikit-learn" data-en="Exploratory and predictive analysis using Python, SQL and Scikit-learn">Análisis exploratorio y predictivo con Python, SQL y Scikit-learn</li>
+          <li data-es="Modelo predictivo con AUC 0.84 para detectar abandono de clientes" data-en="Predictive model (AUC 0.84) for customer churn detection">Modelo predictivo con AUC 0.84 para detectar abandono de clientes</li>
+          <li data-es="Simulador interactivo con Streamlit + Plotly" data-en="Interactive simulator built with Streamlit + Plotly">Simulador interactivo con Streamlit + Plotly</li>
+          <li data-es="Identificación de variables clave para estrategias de retención" data-en="Key variable identification for customer retention strategies">Identificación de variables clave para estrategias de retención</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="carousel" id="c1">
+        <div class="carousel-track" id="ct1">
+          <img src="assets/imgs/project-salesforce/Customer Support Executive Overview.png">
+          <img src="assets/imgs/project-salesforce/Customer_Support_Executive_Overview.jpg">
+          <img src="assets/imgs/project-salesforce/Case_After_Save_Recalculate_Health.jpg">
+          <img src="assets/imgs/project-salesforce/Case_Before_Delete_Recalculate_Health.jpg">
+          <img src="assets/imgs/project-salesforce/Subflow_Case_Management_Customer_Health.jpg">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="slide('c1',-1)">&#8249;</button>
+        <button class="carousel-btn carousel-next" onclick="slide('c1',1)">&#8250;</button>
+        <div class="carousel-dots" id="cd1"><div class="cdot active" onclick="goTo('c1',0)"></div><div class="cdot" onclick="goTo('c1',1)"></div><div class="cdot" onclick="goTo('c1',2)"></div></div>
+        <div class="zoom-hint" data-es="clic para ampliar" data-en="click to enlarge">clic para ampliar</div>
+      </div>
+      <div class="project-body">
+        <div class="project-title">Salesforce Service Cloud Simulation</div>
+        <div class="project-links">
+          <span class="project-link" style="cursor:default;opacity:.55;" data-es="Entorno privado (capturas)" data-en="Private environment (screenshots)">Entorno privado (capturas)</span>
+        </div>
+        <ul class="project-items">
+          <li data-es="Simulación de entorno de soporte con múltiples cuentas y casos" data-en="Support environment simulation with multiple accounts and cases">Simulación de entorno de soporte con múltiples cuentas y casos</li>
+          <li data-es="Dashboards y reportes para monitoreo operativo en tiempo real" data-en="Dashboards and reports for real-time operational monitoring">Dashboards y reportes para monitoreo operativo en tiempo real</li>
+          <li data-es="Identificación de riesgo en clientes y priorización de incidencias" data-en="Customer risk identification and incident prioritization">Identificación de riesgo en clientes y priorización de incidencias</li>
+          <li data-es="Automatizaciones con Record-Triggered Flows para health scoring" data-en="Automations using Record-Triggered Flows for health scoring">Automatizaciones con Record-Triggered Flows para health scoring</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="carousel" id="c2">
+        <div class="carousel-track" id="ct2">
+          <img src="assets/imgs/project-ecomerce/Screenshot_ecommerce_1.jpg">
+          <img src="assets/imgs/project-ecomerce/Screenshot_ecommerce_2.jpg">
+          <img src="assets/imgs/project-ecomerce/Screenshot_ecommerce_3.jpg">
+          <img src="assets/imgs/project-ecomerce/Screenshot_ecommerce_4.jpg">
+          <img src="assets/imgs/project-ecomerce/Screenshot_ecommerce_5.jpg">
+          <img src="assets/imgs/project-ecomerce/Screenshot_ecommerce_6.jpg">
+          <img src="assets/imgs/project-ecomerce/Screenshot_ecommerce_7.jpg">
+          <img src="assets/imgs/project-ecomerce/Screenshot_ecommerce_8.jpg">
+        </div>
+        <button class="carousel-btn carousel-prev" onclick="slide('c2',-1)">&#8249;</button>
+        <button class="carousel-btn carousel-next" onclick="slide('c2',1)">&#8250;</button>
+        <div class="carousel-dots" id="cd2"><div class="cdot active" onclick="goTo('c2',0)"></div><div class="cdot" onclick="goTo('c2',1)"></div><div class="cdot" onclick="goTo('c2',2)"></div></div>
+        <div class="zoom-hint" data-es="clic para ampliar" data-en="click to enlarge">clic para ampliar</div>
+      </div>
+      <div class="project-body">
+        <div class="project-title">E-commerce Web App — Yugen Store</div>
+        <div class="project-links">
+          <a class="project-link" href="https://github.com/nico-carri/yugen-store" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>GitHub</a>
+          <a class="project-link" href="https://yugen-ecommerce.kozow.com/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Site</a>
+          <a class="project-link" href="https://public.tableau.com/app/profile/nicolas.carrizo/viz/E-commerceDashboarddeVentas/DashboarddeVentas?publish=yes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Tableau</a>
+        </div>
+        <ul class="project-items">
+          <li data-es="Desarrollo con Spring Boot + Oracle Cloud (ADB + Object Storage)" data-en="Built with Spring Boot + Oracle Cloud (ADB + Object Storage)">Desarrollo con Spring Boot + Oracle Cloud (ADB + Object Storage)</li>
+          <li data-es="Pipeline ETL hacia Tableau para análisis de ventas y clientes" data-en="ETL pipeline into Tableau for sales and customer analysis">Pipeline ETL hacia Tableau para análisis de ventas y clientes</li>
+          <li data-es="Dashboard interactivo: ingresos, comportamiento y mercado por región" data-en="Interactive dashboard: revenue, customer behavior and regional market">Dashboard interactivo: ingresos, comportamiento y mercado por región</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FORMACIÓN -->
+<section>
+  <div class="section-label" data-es="Formación Académica" data-en="Education">Formación Académica</div>
+  <div class="edu-list">
+    <div class="edu-item"><div><div class="edu-inst">IFTS N°11</div><div class="edu-title" data-es="Tecnicatura en Ciencia de Datos e Inteligencia Artificial" data-en="Technical Degree in Data Science and Artificial Intelligence">Tecnicatura en Ciencia de Datos e Inteligencia Artificial</div></div><div class="edu-date">08.2024 – <span data-es="Presente" data-en="Present">Presente</span></div></div>
+    <div class="edu-item"><div><div class="edu-inst">CPF8 SMATA</div><div class="edu-title" data-es="Especialización Web · Trayecto Programador" data-en="Web Specialization · Programming Track">Especialización Web · Trayecto Programador</div></div><div class="edu-date">08.2024 – 12.2025</div></div>
+    <div class="edu-item"><div><div class="edu-inst">Alura Latam</div><div class="edu-title" data-es="Oracle ONE Tech Foundation G8 — Data Science" data-en="Oracle ONE Tech Foundation G8 — Data Science">Oracle ONE Tech Foundation G8 — Data Science</div></div><div class="edu-date">01.2025 – 08.2025</div></div>
+    <div class="edu-item"><div><div class="edu-inst">Talento Tech</div><div class="edu-title" data-es="Salesforce · Big Data / Data Analytics" data-en="Salesforce · Big Data / Data Analytics">Salesforce · Big Data / Data Analytics</div></div><div class="edu-date">03.2024 – 12.2025</div></div>
+  </div>
+</section>
+
+<!-- IDIOMAS + INTERESES -->
+<div class="footer-row">
+  <div class="small-card">
+    <div class="small-title" data-es="Idiomas" data-en="Languages">Idiomas</div>
+    <div class="lang-item"><span data-es="Español" data-en="Spanish">Español</span><span class="lang-level" data-es="Nativo" data-en="Native">Nativo</span></div>
+    <div class="lang-item"><span data-es="Inglés" data-en="English">Inglés</span><span class="lang-level">B2</span></div>
+    <div class="lang-item"><span data-es="Japonés" data-en="Japanese">Japonés</span><span class="lang-level" data-es="Avanzado" data-en="Advanced">Avanzado</span></div>
+  </div>
+  <div class="small-card">
+    <div class="small-title" data-es="Intereses" data-en="Interests">Intereses</div>
+    <span class="interest-tag" data-es="Análisis aplicado a negocio" data-en="Business-applied analytics">Análisis aplicado a negocio</span>
+    <span class="interest-tag" data-es="Automatización de procesos" data-en="Process automation">Automatización de procesos</span>
+    <span class="interest-tag" data-es="Cloud computing" data-en="Cloud computing">Cloud computing</span>
+    <span class="interest-tag" data-es="Arquitecturas escalables" data-en="Scalable architectures">Arquitecturas escalables</span>
+  </div>
+</div>
+
+<!-- CONTACTO -->
+<section>
+  <div class="section-label" data-es="Contacto directo" data-en="Get in touch">Contacto directo</div>
+  <div class="form-grid">
+    <div class="form-group"><label data-es="Nombre" data-en="Name">Nombre</label><input type="text" id="f-name" data-placeholder-es="Tu nombre" data-placeholder-en="Your name" placeholder="Tu nombre" autocomplete="off"></div>
+    <div class="form-group"><label>Email</label><input type="email" id="f-email" data-placeholder-es="tu@email.com" data-placeholder-en="your@email.com" placeholder="tu@email.com" autocomplete="off"></div>
+    <div class="form-group full"><label data-es="Asunto" data-en="Subject">Asunto</label><input type="text" id="f-subject" data-placeholder-es="Motivo del contacto" data-placeholder-en="Reason for contact" placeholder="Motivo del contacto" autocomplete="off"></div>
+    <div class="form-group full"><label data-es="Mensaje" data-en="Message">Mensaje</label><textarea id="f-msg" rows="5" data-placeholder-es="Tu mensaje..." data-placeholder-en="Your message..." placeholder="Tu mensaje..."></textarea></div>
+    <div class="form-group full" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <button class="btn" onclick="sendMsg()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        <span data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</span>
+      </button>
+      <span class="form-status" id="form-status"></span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Nicolás Darío Carrizo &nbsp;·&nbsp; CABA, Argentina</p>
+</footer>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("hV4KT9fW3-_6p07m3");
+  })();
+</script>
+
+<script src="js/script.js"></script>
+</body>
+</html>
