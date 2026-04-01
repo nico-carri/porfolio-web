@@ -152,5 +152,12 @@ function downloadCV() {
     ? "./assets/docs/CV_Nicolas_Carrizo_ES.pdf"
     : "./assets/docs/CV_Nicolas_Carrizo_EN.pdf";
 
-  window.open(url, "_blank");
+  const link = document.createElement("a");
+  link.href = url;
+  link.target = "_blank";   // abre en nueva pestaña
+  link.rel = "noopener";
+
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
