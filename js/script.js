@@ -149,8 +149,8 @@ function sendMsg(){
 // ── DOWNLOAD ──
 function downloadCV() {
   let url = lang === "es"
-    ? "assets/docs/CV_Nicolas_Carrizo_ES.pdf"
-    : "assets/docs/CV_Nicolas_Carrizo_EN.pdf";
+    ? "./assets/docs/CV_Nicolas_Carrizo_ES.pdf"
+    : "./assets/docs/CV_Nicolas_Carrizo_EN.pdf";
 
   window.open(url, "_blank");
 }
