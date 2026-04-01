@@ -148,17 +148,13 @@ function sendMsg(){
 
 // ── DOWNLOAD ──
 function downloadCV() {
-  const a = document.createElement('a');
+  let url = "";
 
-  if (lang === 'es') {
-    a.href = 'assets/docs/CV_Nicolas_Carrizo_ES.pdf';
-    a.download = 'Nicolas_Carrizo_CV_ES.pdf';
+  if (lang === "es") {
+    url = "assets/docs/CV_Nicolas_Carrizo_ES.pdf";
   } else {
-    a.href = 'assets/docs/CV_Nicolas_Carrizo_EN.pdf';
-    a.download = 'Nicolas_Carrizo_CV_EN.pdf';
+    url = "assets/docs/CV_Nicolas_Carrizo_EN.pdf";
   }
 
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
+  window.open(url, "_blank");
 }
