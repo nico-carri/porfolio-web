@@ -151,9 +151,9 @@ function downloadCV() {
   let url = "";
 
   if (lang === "es") {
-    url = "assets/docs/CV_Nicolas_Carrizo_ES.pdf";
+    url = "/assets/docs/CV_Nicolas_Carrizo_ES.pdf";
   } else {
-    url = "assets/docs/CV_Nicolas_Carrizo_EN.pdf";
+    url = "/assets/docs/CV_Nicolas_Carrizo_EN.pdf";
   }
 
   window.open(url, "_blank");
