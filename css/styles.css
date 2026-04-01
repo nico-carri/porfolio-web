@@ -7,7 +7,13 @@
   --muted: #7a7a9a;
   --input-bg: #1e1e2a;
   --input-border: rgba(255, 255, 255, 0.12);
+
   --shadow: rgba(0, 0, 0, 0.4);
+
+  --accent: #078d70;
+  --accent2: #428bca;
+  --accent3: #5049cc;
+  --accent-dark: #5049cc;
 }
 :root[data-theme="light"] {
   --bg: #f4f6f8;
@@ -26,6 +32,7 @@
 
   --accent: #078d70;
   --accent2: #428bca;
+  --accent3: #5049cc;
   --accent-dark: #5049cc;
 }
 :root {
@@ -187,40 +194,53 @@ h1 span {
   display: flex;
   align-items: center;
   gap: 8px;
+
   font-size: 12px;
   color: var(--muted);
   text-decoration: none;
-  transition: color 0.2s;
+
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: 3px;
+
+  transition: all 0.2s;
 }
 .contact-item:hover {
   color: var(--accent);
+  border-color: var(--accent);
 }
 .contact-item svg {
   width: 15px;
   height: 15px;
   flex-shrink: 0;
 }
-.wa-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
+
+/* EMAIL */
+.contact-item.email:hover {
+  color: #ea4335;
+  border-color: #ea4335;
+  background: rgba(234, 67, 53, 0.08);
+}
+
+/* WHATSAPP */
+.contact-item.whatsapp:hover {
   color: #25d366;
-  border: 1px solid rgba(37, 211, 102, 0.3);
-  padding: 5px 12px;
-  border-radius: 3px;
-  text-decoration: none;
-  transition:
-    background 0.2s,
-    color 0.2s;
+  border-color: #25d366;
+  background: rgba(37, 211, 102, 0.08);
 }
-.wa-btn:hover {
-  background: #25d366;
-  color: #fff;
+
+/* LINKEDIN */
+.contact-item.linkedin:hover {
+  color: #0a66c2;
+  border-color: #0a66c2;
+  background: rgba(10, 102, 194, 0.08);
 }
-.wa-btn svg {
-  width: 15px;
-  height: 15px;
+
+/* GITHUB */
+.contact-item.github:hover {
+  color: #333;
+  border-color: #333;
+  background: rgba(0, 0, 0, 0.08);
 }
 
 /* ── SECTIONS ── */
@@ -231,7 +251,7 @@ section {
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #5049cc;
+  color: var(--accent3);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -241,7 +261,7 @@ section {
   content: "";
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, rgba(123, 173, 226, 0.3), transparent);
+  background: linear-gradient(90deg, var(--accent3), transparent);
 }
 
 /* ── PERFIL ── */
