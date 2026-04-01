@@ -26,7 +26,7 @@
 
   --accent: #078d70;
   --accent2: #428bca;
-  --accent-dark: #078d70;
+  --accent-dark: #5049cc;
 }
 :root {
   --accent: #26ceaa;
@@ -231,7 +231,7 @@ section {
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--accent2);
+  color: #5049cc;
   margin-bottom: 20px;
   display: flex;
   align-items: center;
