@@ -151,10 +151,10 @@ function downloadCV() {
   const a = document.createElement('a');
 
   if (lang === 'es') {
-    a.href = 'assets/CV_Nicolas_Carrizo_ES.pdf';
+    a.href = 'assets/docs/CV_Nicolas_Carrizo_ES.pdf';
     a.download = 'Nicolas_Carrizo_CV_ES.pdf';
   } else {
-    a.href = 'assets/CV_Nicolas_Carrizo_EN.pdf';
+    a.href = 'assets/docs/CV_Nicolas_Carrizo_EN.pdf';
     a.download = 'Nicolas_Carrizo_CV_EN.pdf';
   }
 
