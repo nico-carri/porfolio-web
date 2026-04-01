@@ -158,5 +158,7 @@ function downloadCV() {
     a.download = 'Nicolas_Carrizo_CV_EN.pdf';
   }
 
+  document.body.appendChild(a);
   a.click();
+  document.body.removeChild(a);
 }
