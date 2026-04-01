@@ -147,54 +147,16 @@ function sendMsg(){
 }
 
 // ── DOWNLOAD ──
-function downloadCV(){
-  const cv=`NICOLÁS DARÍO CARRIZO — DATA ANALYST
-CABA, Argentina
-LinkedIn: www.linkedin.com/in/nicolascarrizo938/
-GitHub: https://github.com/nico-carri
+function downloadCV() {
+  const a = document.createElement('a');
 
-PROFILE
-Data Science & AI student focused on data analysis and BI.
-Experienced with SQL, Python and Tableau. Projects include dashboards,
-predictive models and cloud-integrated solutions.
-Target roles: Data Analyst · BI Analyst · Salesforce Trainee
+  if (lang === 'es') {
+    a.href = 'assets/CV_Nicolas_Carrizo_ES.pdf';
+    a.download = 'Nicolas_Carrizo_CV_ES.pdf';
+  } else {
+    a.href = 'assets/CV_Nicolas_Carrizo_EN.pdf';
+    a.download = 'Nicolas_Carrizo_CV_EN.pdf';
+  }
 
-SKILLS
-Data & BI:     SQL | Python (Pandas, Scikit-learn)
-Visualization: Tableau | Looker Studio | Plotly
-Development:   Java (Spring Boot) | HTML | CSS | JavaScript
-Cloud/Tools:   Git | Docker | Oracle Cloud (OCI)
-Salesforce:    Service Cloud | Reports | Dashboards | Case Mgmt | API
-
-PROJECTS
-Customer Churn Analysis (Telecom)
-  GitHub: https://github.com/nico-carri/telecom-churn-analysis
-  Demo:   https://telecom-churn-analysis-pndc.streamlit.app/
-  • Predictive model AUC 0.84 — Python, SQL, Scikit-learn
-  • Interactive simulator with Streamlit + Plotly
-
-Salesforce Service Cloud Simulation
-  • Multi-account support environment, dashboards, operational reports
-  • Record-Triggered Flow automations for customer health scoring
-
-E-commerce Web App — Yugen Store
-  GitHub:  https://github.com/nico-carri/yugen-store
-  Live:    https://yugen-ecommerce.kozow.com/
-  Tableau: https://public.tableau.com/app/profile/nicolas.carrizo/viz/E-commerceDashboarddeVentas/DashboarddeVentas
-  • Spring Boot + Oracle Cloud · ETL pipeline to Tableau
-
-EDUCATION
-IFTS N°11      Data Science & AI Technical Degree          08.2024 – Present
-CPF8 SMATA     Web Specialization · Programming Track       08.2024 – 12.2025
-Alura Latam    Oracle ONE Tech Foundation G8 – Data Sci     01.2025 – 08.2025
-Talento Tech   Salesforce · Big Data / Data Analytics       03.2024 – 12.2025
-
-LANGUAGES
-Spanish: Native | English: B2 | Japanese: Advanced
-`;
-  const blob=new Blob([cv],{type:'text/plain;charset=utf-8'});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement('a');
-  a.href=url;a.download='Nicolas_Carrizo_CV.txt';a.click();
-  URL.revokeObjectURL(url);
+  a.click();
 }
